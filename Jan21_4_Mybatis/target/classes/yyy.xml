@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yyy">
+	<select id="getAllfruit" resultType="com.hyoseop.jan214.main.Fruit">
+		select * from fruit order by f_price
+	</select>
+	
+	<insert id="registerfruit" parameterType="com.hyoseop.jan214.main.Fruit">
+		insert into fruit values(#{f_name}, #{f_price})
+	</insert>
+</mapper>
