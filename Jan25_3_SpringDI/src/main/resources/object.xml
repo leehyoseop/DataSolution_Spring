@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+
+	
+	<bean id="b1" class="com.hyoseop.jan25.bird.Bird">
+		<property name="name" value="앵무새"></property>
+		<property name="age" value="5"></property>
+	</bean>
+	<bean id="b2" class="com.hyoseop.jan25.bird.Bird">
+		<property name="name" value="까치"></property>
+		<property name="age" value="6"></property>
+	</bean>
+
+	<bean id="d1" class="com.hyoseop.jan25.dog.Dog">
+		<property name="name" value="도베르만"></property>
+		<property name="age" value="15"></property>
+	</bean>
+	<bean id="d2" class="com.hyoseop.jan25.dog.Dog">
+		<property name="name" value="허스키"></property>
+		<property name="age" value="3"></property>
+	</bean>
+	<bean id="h1" class="com.hyoseop.jan25.human.Human">
+		<property name="name" value="이효섭"></property>
+		<property name="age" value="27"></property>
+		<property name="nickname">
+			<list value-type="java.lang.String">
+				<value>티라노</value>
+				<value>트리켑</value>
+			</list>
+		</property>
+		<property name="family">
+			<map key-type = "java.lang.String" value-type="java.lang.Integer">
+				<entry key="아버지" value="63"></entry>
+				<entry key="어머니" value="58"></entry>
+				<entry key="누나" value="32"></entry>
+			</map>
+		</property>
+		<property name="pet" ref="d1"></property> 
+	</bean>
+	<context:annotation-config></context:annotation-config>
+	<bean id="h2" class="com.hyoseop.jan25.human.Human">
+		<constructor-arg value="윤기영"></constructor-arg>
+		<constructor-arg value="27"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>윤윤기영</value>
+				<value>융기</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg>
+			<list>
+				<value>김대영</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg>
+			<map>
+				<entry key="아버지" value="99"></entry>
+				<entry key="어머니" value="88"></entry>
+				<entry key="누나" value="77"></entry>
+			</map>
+		</constructor-arg>
+		<constructor-arg ref="d1"></constructor-arg>
+		<constructor-arg ref="b1"></constructor-arg>
+	</bean>
+	
+</beans>

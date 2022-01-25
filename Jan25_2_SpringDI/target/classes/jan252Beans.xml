@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="s1" class="com.hyoseop.jan252.stock.Stock"></bean>
+	
+	<bean id="s2" class="com.hyoseop.jan252.stock.Stock">
+		<property name="name" value="삼성전자"></property>
+		<property name="price" value="90000"></property>
+	</bean>
+	
+	<bean id="p1" class="com.hyoseop.jan252.phone.Phone">
+		<property name="name" value="아이폰"></property>
+		<property name="price" value="999999"></property>
+		<property name="date" value="20220125"></property>
+	</bean>
+	
+	<bean id="s3" class="com.hyoseop.jan252.stock.Stock">
+		<constructor-arg value="카카오"></constructor-arg>
+		<constructor-arg value="45000"></constructor-arg>
+	</bean>
+	<bean id="p2" class="com.hyoseop.jan252.phone.Phone">
+		<constructor-arg value="갤럭시15"></constructor-arg>
+		<constructor-arg value="888888"></constructor-arg>
+		<constructor-arg value="20210515"></constructor-arg>
+	</bean>
+</beans>
