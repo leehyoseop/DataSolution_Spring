@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hyoseop.main.test.TestMapper">
+	<insert id="regTest" parameterType="com.hyoseop.main.test.Test">
+		insert into Test values(#{subject }, #{year}, #{month}, #{day})
+	</insert>
+	<select id="selTest" resultType="com.hyoseop.main.test.Test">
+		select * from Test order by subject
+	</select>
+</mapper>
