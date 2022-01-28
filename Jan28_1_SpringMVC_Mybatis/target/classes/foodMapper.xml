@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hyoseop.jan28.FoodMapper">
+	<insert id="regFood" parameterType="com.hyoseop.jan28.Food">
+		insert into Food values(#{menu}, #{price}, #{file_name})
+	</insert>
+	
+	<select id="selFood" resultType="com.hyoseop.jan28.Food">
+		select * from Food order by menu
+	</select>
+</mapper>
