@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src=jQuery.js></script>
+<script type="text/javascript">
+	$(function(){
+		let arr = [1,56,82,65,123];
+		let obj = {menu:"국밥", price:8000};
+		//배열 속에 객체
+		//이 형태로 DB에 있는 데이터를 표현한 것 : JSON
+		let arrobj = [
+						{
+							menu:"라면",	
+							price:4000
+						},
+						{
+							menu:"김밥",	
+							price:3000
+						},
+						{
+							menu:"짬뽕",	
+							price:7000
+						}
+					];
+		//JavaScript의 배열 대상 반복문
+		//for -인덱스의 활용도가 높은 편
+		//for (Menu m : arrobj) -객체에 차례대로 접근이 용이한 편
+		//$.each(배열, 데이터 하나 만날때 마다 호출될 콜백함수);
+		$.each(arrobj, function(i, lunch) {
+			alert("ㅎㅇ");
+			alert(i + ")" + lunch.menu + " : " + lunch.price);
+		});
+	
+		// DOM객체 대상 반복문
+		//	$(선택자).each(DOM객체를 하나 만날때마다 호출될 콜백함수)
+		
+		$("h1").each(function(asdfasdf,h){
+			$(h).css("font-size", ((asdfasdf + 1)*10)+"pt");
+		});
+	});
+
+</script>
+</head>
+<body>
+	<h1>아빠</h1>
+	<h1>엄마</h1>
+	<h1>누나</h1>
+</body>
+</html>

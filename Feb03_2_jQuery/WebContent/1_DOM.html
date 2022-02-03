@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		//alert("ddd");
+		$("#b1").click(function(){
+			//alert("성공")
+			//$("a").text("<b>구글로</b>");
+			$("a").html("<b>구글로</b>");
+			
+		});
+		
+		$("#b2").click(function(){
+			$("a").attr("href", "https://www.google.com");
+			$("a").attr("id", "t");
+			$("a").removeAttr("class");	
+		});
+		
+		let n = 0;
+		$("#b4").click(function() {
+			n++;
+			//$("CSS선택자") or $(변수명) : 있는 것을 선택
+			//$("DOM객체") : DOM객체 생성
+			//behavior : 스크롤 방식 설정 / alternate : 왕복
+			let m = $("<marquee></marquee>").text("다들 피곤하시죠" + n + "트");
+			m.attr("behavior", "alternate");
+			
+			//$("div").append(m);
+			$("div").prepend(m);
+			//이건 역순
+		});
+		
+		$("#b3").click(function(){
+			//$("div").remove();
+			$("div").empty();
+		});
+		
+		let i = 0;
+		setInterval(function() {
+			i++;
+			if(i==8){
+				i=1
+			}
+			$("img").attr("src", "s" + i +".png");
+			
+		},300);
+		
+		$("#regBtn").click(function() {
+			let m_name = $("#m_name").val();
+			let m_price = $("#m_price").val();
+			
+			//<tr>
+			//	<td>김치볶음밥</td>
+			//	<td>5000</td>
+			//</tr>
+			
+			let td1 = $("<td></td>").text(m_name);
+			let td2 = $("<td></td>").text(m_price);
+			let tr = $("<tr></tr>").append(td1, td2);
+			
+			$("table").append(tr);
+			
+			$("#m_name").val("");
+			$("#m_price").val("");
+
+				
+		});
+	});
+</script>
+<style type="text/css">
+	#t{
+		background-color : pink;
+		color : white;
+	}
+	div{
+		border : pink solid 3px;
+		width : 300px;
+		height : 300px;
+	}
+	.t2{
+		font-size: 30pt;
+	}
+</style>
+</head>
+<body>
+	메	뉴 : <input id ="m_name"><p>
+	가	격 : <input id ="m_price"><p>
+	<button id = "regBtn">등록</button>
+	<table border="1">
+		<tr>
+			<th>메뉴명</th>
+			<th>가격</th>
+		</tr>
+	</table>
+	<img width = "150px;" height="150px;">
+	<hr>
+	<a href = "https://www.naver.com" class="t2">네이버로</a><hr>
+	<button id = "b1">내용 수정</button><br>
+	<button id = "b2">속성 수정</button><br>
+	<button id = "b3">DOM객체 삭제</button><br>
+	<button id = "b4">DOM객체 수정</button><br>
+	<div></div>	
+</body>
+</html>
