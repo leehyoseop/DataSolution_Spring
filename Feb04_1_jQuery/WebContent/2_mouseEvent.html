@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		//alert('연결');
+		$("div").mousedown(function() {
+			$("h1").text("mousedown");
+		});
+		
+		$("div").mouseup(function() {
+			$("h1").text("mouseup");
+		});
+		
+		$("div").mouseenter(function() {
+			$("h1").text("mouseenter");
+		});
+		$("div").mouseleave(function() {
+			$("h1").text("mouseleave");
+		});
+		
+		//DOM객체의 정확한 좌표를 알고 싶을때!
+		let divX = $("div").offset().left;	//선택자의 정확한 X좌표
+		let divY = $("div").offset().top;	//선택자의 정확한 Y좌표
+		//alert(divX);
+		//alert(divY);
+		
+		$("div").mousemove(function(e) {
+			$("h2").text("mousemove : " + e.pageX + ", " + e.pageY);
+			//div기준에서의 정확한 좌표
+			let x = e.pageX - divX;
+			let y = e.pageY - divY;
+			$("h2").text("정확한좌표 : " + x + ", " + y);
+		});
+		
+		$("html").mousemove(function(e) {
+			$("img").css("left", (e.pageX + 1) + "px");
+			$("img").css("top", (e.pageY + 1) + "px");
+		});
+		
+		$(document).contextmenu(function() {
+			return false;
+		});
+		
+		$("html").mousedown(function(e) { //어떤 상황에든지 mousedown이 발동하면
+			if (e.button == 2) { //마우스 우클릭 했을 때
+				$("table").css("opacity","1");			
+				$("table").css("left", e.pageX + "px");
+				$("table").css("top", e.pageY + "px");
+			}
+			setTimeout(function() {
+				$("table").css("opacity","0");
+				setTimeout(function() {
+					$("table").css("left", "-100px");
+					$("table").css("top", "-100px");
+				},300);
+			},3000)
+		});
+	});
+
+</script>
+<style type="text/css">
+	div{
+		border:red solid 3px;
+		width:200px;
+		height:200px;
+	}
+	
+	img{
+		position:fixed;
+	}
+	
+	table{
+		position:fixed;
+		opacity:0;
+		top:-100px;
+		left:-100px;
+		transition:opacity 0.3s ease-in;
+	}
+
+</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<td><a href = "https://www.naver.com">네이버</a></td>
+		</tr>
+		<tr>
+			<td><a href = "https://www.youtube.com">유뷰트</a></td>
+		</tr>
+		<tr>
+			<td><a href = "https://www.google.com">구글</a></td>
+		</tr>
+	</table>
+	<img src = "dino4.png" width = "300px">
+	<div></div>
+	<h1></h1>
+	<h2></h2>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style type="text/css">
+h2 {
+	position: fixed;
+}
+</style>
+<script type="text/javascript">
+	$(function() {
+		//alert('연결성공');
+		/*$("input").keydown(function() {
+			//alert('띠용!');
+			$("h1").text("키보드 누르는 동안!");
+			
+			return false; //기능발동전에 원래 기능을 못하도록 막을 수 있다
+		});*/
+		//이벤트에 연결되는 콜백함수의 첫번째 파라미터로 이벤트 객체 e
+		//발생한 이벤트의 정보가 들어있음
+		$("input").keydown(function(e) {
+			$("h1").text(e.keyCode);
+			//특정한 키를 눌렀을 때  뭔가 하고 싶으면 
+			if(e.keyCode == 13){
+				alert("이건 무슨키 일까요?");
+			} else if (e.keyCode == 65) {
+				return false;	//a키 사용하지 못하도록 막기
+			} else if (e.keyCode == 83) {
+				let t = $("input").val();	//input에 들어가는 내용을 변수에 담고
+				$("input").val(t+"ㅋ");	//s를 누르면 ㅋ이 들어가게
+				return false;
+			}
+		});
+		
+		$("input").keyup(function() {
+			$("h1").text("키보드에서 손 떼기");
+		});
+		
+		let l = 0;
+		$("html").keydown(function(e) {
+			// alert("저녁메뉴는 부대찌개");
+			/* if (e.keyCode == 116) {
+				alert("ㅋㅋㅋㅋㅋ");
+				return false;
+			} */
+			if (e.keyCode == 39) {
+				l+=5;
+				$("h2").css("left", l+"px");
+			}
+			
+		});
+	});
+	
+
+</script>
+</head>
+<body>
+	<h2>금요일!!!</h2>
+	<input>
+	<h1></h1>
+</body>
+</html>

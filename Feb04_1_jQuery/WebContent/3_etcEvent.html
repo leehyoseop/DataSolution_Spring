@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		//alert("ddd");
+		$("select").change(function() {
+			let t = $(this).val();
+			//alert(t);
+			if (t == "직접 입력") {
+				$(this).removeAttr("name"); //기존 select에 있던 name을 제거
+				let eAddr = $("<input>").attr("name", "eAddr");
+				$("div").append(eAddr);
+			} else {
+				$("div").empty();
+				$(this).attr("name", "eAddr");
+			}
+		});
+		
+		let ww = $(window).width();
+		let wh = $(window).height();
+		$("h1").text(ww + ", " + wh);
+		$(window).resize(function() {
+			ww = $(this).width();
+			wh = $(this).height();
+			$("h1").text(ww + ", " + wh);
+		})
+		//JavScript의 내장 객체
+		//		document : 이 html 자체
+		//		navigator : 기능적인 면의 웹 브라우저
+		//		window : 디자인적인면의 웹 브라우저
+		
+		$(window).scroll(function() { //브라우저의 스크롤 이벤트
+			let dh = $(document).height(); //html전체의 높이
+			let wh = $(window).height(); //브라우저의 높이
+			let st = $(window).scrollTop(); //스크롤 했을때의 위치
+			//alert(dh + ", " + wh + ", " + st);
+			let sb = st  + wh;
+			if (sb>=dh-10) { //스크롤을 아래로
+				alert("둥");
+				let h2 = $("<h2></h2>").text("노잼이라 죄송합니다");
+				$("body").append(h2);
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<h1></h1>
+	<select name = "eAddr">
+		<option value = "naver.com">naver.com</option>
+		<option value = "gmail.com">gmail.com</option>
+		<option value = "daum.net">daum.net</option>	
+		<option>직접 입력</option>	
+	</select>
+	<div></div>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+	빅맥<br>공룡<br>오리<br>꽥꽥<br>
+</body>
+</html>
